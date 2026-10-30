@@ -16,6 +16,10 @@ Pagina::privada("admin");
   <meta property="og:site_name" content="Sistema de Tutorías">
   <meta property="og:locale" content="es_GT">
   <link rel="stylesheet" href="css/estilos.css">
+<<<<<<< HEAD
+=======
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+>>>>>>> a9dd87e653677de0d089df7bdb378154fcd5fd82
 </head>
 <body>
   <header class="encabezado">
