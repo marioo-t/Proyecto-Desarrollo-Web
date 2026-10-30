@@ -19,6 +19,10 @@ const pintarMenu = (usuario) => {
   const enlaces = [["panel.php", "Panel"], ["tutorias.php", "Tutorías"]];
   if (usuario.rol === "estudiante") {
     enlaces.push(["mis-solicitudes.php", "Mis solicitudes"]);
+  } else if (usuario.rol === "profesor") {
+    enlaces.push(["estudiantes.php", "Mis estudiantes"]);
+  } else {
+    enlaces.push(["profesores.php", "Profesores"]);
   }
 
   $("#menu").innerHTML = enlaces.map(([url, texto]) =>

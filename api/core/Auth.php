@@ -1,7 +1,7 @@
 <?php
 class Auth
 {
-    private const TABLAS = ["profesor" => "profesores", "estudiante" => "estudiantes"];
+    private const TABLAS = ["admin" => "administradores", "profesor" => "profesores", "estudiante" => "estudiantes"];
 
     public static function usuario(PDO $pdo): ?array
     {

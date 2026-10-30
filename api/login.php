@@ -16,7 +16,7 @@ if ($correo === "" || $clave === "") {
     Response::error("Ingresa correo y contraseña");
 }
 
-foreach (["profesor", "estudiante"] as $rol) {
+foreach (["admin", "profesor", "estudiante"] as $rol) {
     $tabla = Auth::tabla($rol);
     $st = $pdo->prepare("SELECT id, nombre, password FROM $tabla WHERE correo = ? AND estado = 1");
     $st->execute([$correo]);

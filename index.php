@@ -20,7 +20,7 @@ Pagina::publica();
   <main class="centrado">
     <section class="caja" aria-labelledby="titulo">
       <h1 id="titulo">Sistema de Tutorías</h1>
-      <p class="suave">Inicia sesión como profesor o estudiante.</p>
+      <p class="suave">Inicia sesión con tu correo y contraseña.</p>
 
       <form id="formLogin" novalidate>
         <label for="correo">Correo</label>

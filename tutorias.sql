@@ -5,6 +5,15 @@ COLLATE utf8mb4_unicode_ci;
 
 USE sistema_tutorias;
 
+CREATE TABLE administradores (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(255) NOT NULL,
+    correo VARCHAR(150) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    estado TINYINT(1) NOT NULL DEFAULT 1,
+    fecha_creacion TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
 CREATE TABLE profesores (
     id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(255) NOT NULL,
@@ -71,6 +80,9 @@ CREATE TABLE inscripciones (
     CONSTRAINT fk_ins_sol FOREIGN KEY (solicitud_id) REFERENCES solicitudes(id) ON DELETE CASCADE,
     CONSTRAINT uq_inscripcion UNIQUE (tutoria_id, estudiante_id)
 );
+
+INSERT INTO administradores (nombre, correo, password) VALUES
+('Administrador', 'admin@uni.edu', '$2y$10$BN0r0wM4fHmtswQY0gKzA.ncHxCirDeML1lpLVltJy59HClq/PKdK');
 
 INSERT INTO profesores (nombre, correo, password) VALUES
 ('Ana Morales',  'ana@uni.edu',   '$2b$10$xH1VwLC8pPDfGU9uU1Y0bep863ic9YbCo8cTcDDCNctyPD1.wYDZ.'),
