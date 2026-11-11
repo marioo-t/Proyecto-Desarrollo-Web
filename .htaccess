@@ -1,0 +1,10 @@
+# Sin listado de archivos en las carpetas
+Options -Indexes
+
+# Oculta archivos y carpetas que empiezan con punto (.env, .git, .htaccess)
+RedirectMatch 404 /\.
+
+# Bloquea el SQL y la documentación
+<FilesMatch "\.(sql|md)$">
+    Require all denied
+</FilesMatch>

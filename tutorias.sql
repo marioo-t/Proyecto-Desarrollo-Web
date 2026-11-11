@@ -101,6 +101,15 @@ CREATE TABLE notas (
     CONSTRAINT chk_nota CHECK (nota IS NULL OR (nota >= 0 AND nota <= 100))
 );
 
+-- Intentos fallidos de login (para frenar a quien adivina contraseñas)
+CREATE TABLE intentos_login (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    correo VARCHAR(150) NOT NULL,
+    ip VARCHAR(45) NOT NULL,
+    fecha TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    INDEX idx_intento (correo, ip, fecha)
+);
+
 -- Datos de prueba
 INSERT INTO administradores (nombre, correo, password) VALUES
 ('Administrador', 'admin@uni.edu', '$2y$10$BN0r0wM4fHmtswQY0gKzA.ncHxCirDeML1lpLVltJy59HClq/PKdK');

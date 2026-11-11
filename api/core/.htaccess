@@ -1,0 +1,2 @@
+# Clases internas: solo se incluyen desde PHP, nunca se abren directo
+Require all denied
